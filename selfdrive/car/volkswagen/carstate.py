@@ -95,7 +95,8 @@ class CarState(CarStateBase):
                         pt_cp.vl["Gateway_72"]["ZV_HD_offen"]])
 
     # Update seatbelt fastened status.
-    ret.seatbeltUnlatched = pt_cp.vl["Airbag_02"]["AB_Gurtschloss_FA"] != 3
+    # ret.seatbeltUnlatched = pt_cp.vl["Airbag_02"]["AB_Gurtschloss_FA"] != 3
+    ret.seatbeltUnlatched = False
 
     # Consume blind-spot monitoring info/warning LED states, if available.
     # Infostufe: BSM LED on, Warnung: BSM LED flashing
@@ -222,7 +223,8 @@ class CarState(CarStateBase):
                         pt_cp.vl["Gate_Komf_1"]["BSK_HD_Hauptraste"]])
 
     # Update seatbelt fastened status.
-    ret.seatbeltUnlatched = not bool(pt_cp.vl["Airbag_1"]["Gurtschalter_Fahrer"])
+    # ret.seatbeltUnlatched = not bool(pt_cp.vl["Airbag_1"]["Gurtschalter_Fahrer"])
+    ret.seatbeltUnlatched = False
 
     # Consume blind-spot monitoring info/warning LED states, if available.
     # Infostufe: BSM LED on, Warnung: BSM LED flashing
